@@ -1,7 +1,5 @@
 ## TODO: Could turn this into a python library? Other one is out of date
 
-
-
 ### TODO: Add a threshold where if that EPS is greater than the estimate, then buy
 ### TODO: Set up buying in Alpaca based on that threshold. Createa  trader module
         
