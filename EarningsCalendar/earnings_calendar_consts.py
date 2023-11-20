@@ -1,2 +1,3 @@
 MINIMUM_EPS = 0.2
 MINIMUM_EPS_SURPRISE = 20
+HOLD_DURATION_MINUTES = 60 * 2 # hold for 2 hrs max, then sell

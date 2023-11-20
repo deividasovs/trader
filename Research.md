@@ -11,3 +11,9 @@ MOR
 EPS still in minus
 
 Should only do if EPS is in plsu AND the jump is over 15
+
+# TODO: Look at company's next quarter forecast. BBWI had great EPS but stock fell because they were expecting decrease in sales
+# https://www.barrons.com/articles/bath-body-works-earnings-stock-price-c37f90ea
+
+
+# Make this into a Lambda function, that gets activated by CloudWatch every hour
