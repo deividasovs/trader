@@ -1,3 +1,4 @@
+# get earnings from yahoo finance on a certain day
 import time
 import requests
 from bs4 import BeautifulSoup

@@ -16,4 +16,9 @@ Should only do if EPS is in plsu AND the jump is over 15
 # https://www.barrons.com/articles/bath-body-works-earnings-stock-price-c37f90ea
 
 
-# Make this into a Lambda function, that gets activated by CloudWatch every hour
+## Strats to put in
+- Buy day(s) before a Google/Apple/etc announcement event, sell the day after
+
+
+## Software design
+Make this into a Lambda function, that gets activated by CloudWatch every hour

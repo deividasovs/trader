@@ -6,8 +6,8 @@
 from argparse import ArgumentParser
 from datetime import datetime, timedelta
 
-from earnings_calc_scraper import scrape_earnings_on
-from earnings_calendar_consts import MINIMUM_EPS_SURPRISE, MINIMUM_EPS
+from EarningsCalendar.earnings_calc_scraper import scrape_earnings_on
+from EarningsCalendar.earnings_calendar_consts import MINIMUM_EPS_SURPRISE, MINIMUM_EPS
 
 
 def parse_args():
