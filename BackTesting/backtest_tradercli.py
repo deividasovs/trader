@@ -1,9 +1,8 @@
 import os
 from dotenv import load_dotenv
 
-from setups.trade_strat_consts import MAX_PRICE_PER_TRADE
-
 from BackTesting.test_trading_client import TestTradingClient
+from Setups.trade_strat_consts import MAX_PRICE_PER_TRADE
 
 from alpaca.trading.requests import GetAssetsRequest
 from alpaca.trading.enums import AssetClass
@@ -37,9 +36,16 @@ def get_stock_price_at_time(symbol, time):
 def get_quantity_to_buy_using_max_price(symbol, time):
     return MAX_PRICE_PER_TRADE / get_stock_price_at_time(symbol, time)
 
-def buy_stock_at_market(symbol, time):    
+def buy_stock_at_time(symbol, time):    
     qty_to_buy = get_quantity_to_buy_using_max_price(symbol, time)
     
+    market_order_data = MarketOrderRequest(
+                    symbol=symbol,
+                    qty=qty_to_buy,
+                    side=OrderSide.BUY,
+                    time_in_force=TimeInForce.DAY
+                    )
+
     market_order = trading_client.submit_order(
                     order_data=market_order_data
                 )
@@ -47,7 +53,7 @@ def buy_stock_at_market(symbol, time):
     print("Buy submitted")
     print(market_order)
 
-def sell_all_stock_qty(symbol, time):
+def sell_all_stock_qty(symbol):
     positions = get_all_positions()
     qty_to_sell = next((position.qty for position in positions if position.symbol == symbol), None)
     

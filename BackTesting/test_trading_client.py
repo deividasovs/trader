@@ -10,3 +10,5 @@ class TestTradingClient:
         self.orders.append(order_data)
         return order_data
     
+    def get_all_positions(self):
+        return self.orders

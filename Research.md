@@ -7,6 +7,9 @@ These companies surprised with EPS but stock still fell
 DGLY
 MOR
 
+Yahoo finance get their data from NYSE and Nasdaq directly but is 15 minutes delayed
+
+
 ### Why?
 EPS still in minus
 

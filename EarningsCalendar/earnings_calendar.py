@@ -22,6 +22,19 @@ def parse_args():
     return parser.parse_args()
 
 
+def get_companies_with_positive_eps(date):
+    comps = scrape_earnings_on(date, 0)
+    comps = [comp for comp in comps if comp.surprise != "-"]
+    positive_eps_comps = []
+
+    for comp in comps:
+        if float(comp.surprise) > MINIMUM_EPS_SURPRISE and float(comp.eps_estimate) > MINIMUM_EPS:
+            positive_eps_comps.append(comp)
+            print(comp)
+
+    return positive_eps_comps
+
+
 if __name__ == "__main__":
     args = parse_args()
     args.date = '2023-11-16'
@@ -29,10 +42,4 @@ if __name__ == "__main__":
 
     print(f"Downloading earnings on {earnings_date}")
 
-    comps = scrape_earnings_on(earnings_date, 0)
-
-    comps = [comp for comp in comps if comp.surprise != "-"]
-
-    for comp in comps:
-        if float(comp.surprise) > MINIMUM_EPS_SURPRISE and float(comp.eps_estimate) > MINIMUM_EPS:
-            print(comp)
+    get_companies_with_positive_eps(earnings_date)

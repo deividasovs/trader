@@ -50,10 +50,8 @@ def scrape_earnings_on(date_str, offset=0):
         td.get_text(strip=True) for td in soup.find_all("td", {"aria-label": "Surprise(%)"})
     ]
         
-
     company_revenues = []  
 
-    # For each of the above values, create a new object companyRevenueEps and add them to the array
     for i in range(len(symbols)):
         comp = companyRevenueEps(symbols[i], eps_estimates[i], reported_eps[i], surprises[i])
         company_revenues.append(comp)  
